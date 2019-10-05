@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool Pause;
 
-    private bool[] ArtefactsFound = new bool[5];
+    private bool[] ArtefactsFound = new bool[6];
     private Item[] InputItems;
 
     public Recipe[] Recipies;
@@ -113,6 +113,12 @@ public class GameManager : MonoBehaviour
         }
 
         UpdateUI();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIM.DoPause();
+        }
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             ArtefactsFound[2] = true;
@@ -256,7 +262,11 @@ public class GameManager : MonoBehaviour
         }
         else if (Name == "Artefact of Life")
         {
-            UIM.Victory();
+            ArtefactsFound[5] = true;
+            if (SceneManager.GetActiveScene().name != "Endless")
+            {
+                UIM.Victory();
+            }
         }
     }
 
@@ -284,8 +294,8 @@ public class GameManager : MonoBehaviour
         int GotSick = (int) (Random.Range(MinimumSurplusOfIllChildren, MinimumSurplusOfIllChildren + StrengthOfPandemic) + Mathf.Pow(IllnessBaseOfExponent, StrengthOfPandemic));
         int Died = (int) (Random.Range(0, IllChildren) * ProbabilityOfDeath * StrengthOfPandemic * (SickPopulationPercent > MassDeathThreshold ? MassDeathCoefficient : 1));
 
-        GotSick = Mathf.Min(GotSick / (ArtefactsFound[2] ? 2 : 1), HealthyChildren);
-        Died = Mathf.Min(Died / (ArtefactsFound[2] ? 2 : 1), IllChildren);
+        GotSick = Mathf.Min(GotSick / (ArtefactsFound[2] ? (int)IllnessBaseOfExponent : 1), HealthyChildren);
+        Died = Mathf.Min(Died / (ArtefactsFound[2] ? (int)IllnessBaseOfExponent : 1), IllChildren);
 
         HealthyChildren -= GotSick;
         IllChildren += (GotSick - Died);
