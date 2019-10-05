@@ -5,6 +5,9 @@
 	Susirgimai
 	Tutorial
 	Negative cure?
+<<<<<<< HEAD
+>>>>>>> parent of 5e68434... Kažkas
+=======
 >>>>>>> parent of 5e68434... Kažkas
 
 Bugs: kol kas nėra
