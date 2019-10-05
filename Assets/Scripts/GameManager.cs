@@ -51,8 +51,7 @@ public class GameManager : MonoBehaviour
         {
             r.Output.Crafted = false;
         }
-
-        //OutputDisplay = Output.GetComponent<Display>();
+        
         UIM = gameObject.GetComponent<UIManager>();
 
         InputItems = new Item[UIM.InputSlots.Length];
@@ -65,16 +64,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) /// Must be before pause check!
-        {
-            UIM.DoPause();
-        }
-
         if (Pause)
         {
             return;
         }
-        else if (Countdown > 0)
+
+        if (Countdown > 0)
         {
             Countdown -= Time.deltaTime;
         }
@@ -84,11 +79,21 @@ public class GameManager : MonoBehaviour
             UIM.GameOver();
         }
 
+        if (HealthyChildren <= 0 && IllChildren <= 0)
+        {
+            UIM.GameOver();
+        }
+
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
         HealthyChildrenText.text = "Healthy children: " + HealthyChildren.ToString();
         IllChildrenText.text = "Ill children: " + IllChildren.ToString();
         DeadChildrenText.text = "Dead children: " + DeadChildren.ToString();
         CountdownText.text = Mathf.Ceil(Countdown).ToString();
-        if (Countdown/TimeLimit < 0.2f && CountdownText.color != Color.red)
+        if (Countdown / TimeLimit < 0.2f && CountdownText.color != Color.red)
         {
             CountdownText.color = Color.red;
         }
@@ -96,15 +101,15 @@ public class GameManager : MonoBehaviour
         HealthyChildrenImage.fillAmount = (float)HealthyChildren / (HealthyChildren + IllChildren + DeadChildren);
         DeadChildrenImage.fillAmount = (float)DeadChildren / (HealthyChildren + IllChildren + DeadChildren);
         CountdownImage.fillAmount = Countdown / TimeLimit;
-
-        if (HealthyChildren <= 0 && IllChildren <= 0)
-        {
-            UIM.GameOver();
-        }
     }
 
     public void Create()
     {
+        if (Pause)
+        {
+            return;
+        }
+
         for (int i = 0; i < CurrentResearch; i++)
         {
             if (UIM.InputSlots[i].GetComponent<Display>().ThisItem == null)
@@ -122,9 +127,12 @@ public class GameManager : MonoBehaviour
 
         foreach (Recipe r in Recipies)
         {
-            if (!r.Output.Crafted && CheckRecipe(r))
+            if (!r.Output.Crafted && r.Input.Length == CurrentResearch)
             {
-                SuccessfulResearch(r);
+                if (CheckRecipe(r))
+                {
+                    SuccessfulResearch(r);
+                }
             }
         }
 
@@ -177,12 +185,6 @@ public class GameManager : MonoBehaviour
         IllChildren -= NumberOfCuredChildren;
         HealthyChildren += NumberOfCuredChildren;
 
-        GameObject[] Items = GameObject.FindGameObjectsWithTag("Item");
-        foreach (GameObject go in Items)
-        {
-            go.GetComponent<DragAndDrop>().UpdateHomePosition();
-        }
-
         /// Discovery Window
         UIM.DiscoveryWindow.SetActive(true);
         DiscoveryRewardText.text = "Money: " + (Discovery.MoneyReward > 0 ? "+" : "") + Discovery.MoneyReward + " / Cured: " + (Discovery.CureReward > 0 ? "+" : "") + Discovery.CureReward;
@@ -201,6 +203,11 @@ public class GameManager : MonoBehaviour
     {
         Money += Change;
         MoneyText.text = "$ " + Money.ToString();
+
+        for (int i = 0; i < UIM.ResearchButtons.Length; i++)
+        {
+            UIM.ResearchButtons[i].SetActive((Money >= ResearchCosts[i + 2]) ? true : false);
+        }
 
         if (Money <= 0)
         {

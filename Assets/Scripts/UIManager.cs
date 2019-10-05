@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject PauseWindow;
 
     public GameObject[] InputSlots;
+    public GameObject[] ResearchButtons;
 
     private void Start()
     {
@@ -81,11 +82,13 @@ public class UIManager : MonoBehaviour
 
     public void Victory()
     {
+        GM.Pause = true;
         VictoryWindow.SetActive(true);
     }
 
     public void GameOver()
     {
+        GM.Pause = true;
         GameOverWindow.SetActive(true);
     }
 }

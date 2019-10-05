@@ -3,9 +3,9 @@
 	Kenksmingi dalykai (Discovery VS Disaster Window) (bool on a recipe?)
 	Scrollbar drag both to sides and drag items at the same time
 	Susirgimai
+	Tutorial
 
 Bugs:
-	Atsiradus naujiems elementams reikia atnaujinti DragAndDrop location'us!
 
 Idėjos:
 	Druidų kaimeliai ilgai taikiai gyveno su gamta. Tačiau vieną dieną į jų gyvenamas vietas įsiveržė [KAŽKAS] ir harmonija buvo

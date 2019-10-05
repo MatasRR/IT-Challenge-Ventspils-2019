@@ -9,8 +9,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource MusicSource;
     public AudioSource SFXSource;
 
-    public AudioClip Discovery;
-
     public float PitchRandomness;
     private float OriginalSFXPitch;
 
@@ -31,14 +29,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         OriginalSFXPitch = SFXSource.pitch;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            PlaySFX(Discovery);
-        }
     }
 
     public void PlaySFX(AudioClip SFX)

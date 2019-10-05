@@ -11,8 +11,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public int YDragLimit; // Different resolutions??
     private Item ThisItem;
-    private Vector2 HomePos;
-    private bool StartingPosSet = false;
     private GameObject[] Slots;
 
     private void Start()
@@ -25,19 +23,14 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!StartingPosSet)
+        if (GM.Pause)
         {
-            UpdateHomePosition();
-            StartingPosSet = true;
+            return;
         }
 
         if (Input.mousePosition.y > YDragLimit)
         {
             transform.position = Input.mousePosition;
-        }
-        else
-        {
-            UpdateHomePosition();
         }
     }
 
@@ -58,12 +51,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
                 break;
             }
         }
-
-        transform.position = HomePos;
-    }
-
-    public void UpdateHomePosition()
-    {
-        HomePos = transform.position;
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate(transform.parent as RectTransform);
     }
 }
