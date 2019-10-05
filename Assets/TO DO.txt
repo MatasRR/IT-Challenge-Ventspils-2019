@@ -4,8 +4,6 @@
 	Scrollbar drag both to sides and drag items at the same time
 	Susirgimai
 	Tutorial
-	Negative cure?
->>>>>>> parent of 5e68434... Kažkas
 
 Bugs: kol kas nėra
 
