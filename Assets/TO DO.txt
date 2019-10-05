@@ -4,6 +4,7 @@
 	Scrollbar drag both to sides and drag items at the same time
 	Susirgimai
 	Tutorial
+	Negative cure?
 
 Bugs:
 

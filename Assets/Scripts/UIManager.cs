@@ -16,6 +16,13 @@ public class UIManager : MonoBehaviour
     public GameObject GameOverWindow;
     public GameObject PauseWindow;
 
+    public GameObject ItemVisibilityButton;
+    public GameObject ResearchVisibilityButton;
+    public TextMeshProUGUI ItemVisibilityButtonText;
+    public TextMeshProUGUI ResearchVisibilityButtonText;
+
+    public int ButtonOverhang;
+
     public GameObject[] InputSlots;
     public GameObject[] ResearchButtons;
 
@@ -24,14 +31,16 @@ public class UIManager : MonoBehaviour
         GM = gameObject.GetComponent<GameManager>();
     }
 
-    public void SwitchItemVisibility()
+    public void ChangeItemVisibility()
     {
         ItemPanel.SetActive(!ItemPanel.activeSelf);
+        UpdateButtonPosition();
     }
 
-    public void SwitchResearchVisibility()
+    public void ChangeResearchVisibility()
     {
         ResearchPanel.SetActive(!ResearchPanel.activeSelf);
+        UpdateButtonPosition();
     }
 
     public void DoPause()
@@ -42,8 +51,6 @@ public class UIManager : MonoBehaviour
 
     public void ChooseSlotsQuantity(int Slots)
     {
-        ResearchPanel.SetActive(true);
-
         GM.CurrentResearch = Slots;
 
         for (int i = 2; i < InputSlots.Length; i++)
@@ -55,6 +62,34 @@ public class UIManager : MonoBehaviour
             else
             {
                 InputSlots[i].SetActive(false);
+            }
+        }
+    }
+
+    void UpdateButtonPosition()
+    {
+        float Temp;
+
+        Temp = ItemPanel.activeSelf ? ItemPanel.GetComponent<RectTransform>().rect.height : ButtonOverhang;
+        ItemVisibilityButton.transform.position = new Vector2(ItemVisibilityButton.transform.position.x, Temp);
+        ItemVisibilityButtonText.text = ItemPanel.activeSelf ? "↓" : "↑";
+
+        Temp = ResearchPanel.activeSelf ? ResearchPanel.GetComponent<RectTransform>().rect.width : ButtonOverhang;
+        ResearchVisibilityButton.transform.position = new Vector2(Temp, ResearchVisibilityButton.transform.position.y);
+        ResearchVisibilityButtonText.text = ResearchPanel.activeSelf ? "←" : "→";
+
+        if (!ResearchPanel.activeSelf)
+        {
+            for (int i = 0; i < ResearchButtons.Length; i++)
+            {
+                ResearchButtons[i].SetActive(false);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < ResearchButtons.Length; i++)
+            {
+                ResearchButtons[i].SetActive((GM.Money >= GM.ResearchCosts[i + 2]) ? true : false);
             }
         }
     }

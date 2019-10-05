@@ -9,6 +9,12 @@ public class GameManager : MonoBehaviour
 {
     private UIManager UIM;
 
+    [HideInInspector]
+    public bool Pause;
+
+    private bool[] ArtefactsFound = new bool[5];
+    private Item[] InputItems;
+    
     public Recipe[] Recipies;
     public int[] ResearchCosts;
 
@@ -36,14 +42,19 @@ public class GameManager : MonoBehaviour
     public Image IllChildrenImage;
     public Image DeadChildrenImage;
 
-    public int HealthyChildren;
-    public int IllChildren;
-    public int DeadChildren;
+    public int TotalPopulation;
+    private int HealthyChildren;
+    private int IllChildren;
+    private int DeadChildren;
 
-    private Item[] InputItems;
-
-    [HideInInspector]
-    public bool Pause;
+    public float DiseaseOutbreakFrequency;
+    private float DiseaseOutbreakTimer;
+    public int MinimumSurplusOfIllChildren;
+    public float IllnessBaseOfExponent;
+    public float ProbabilityOfDeath;
+    public float StrengthOfPandemicCoefficient;
+    public float MassDeathThreshold;
+    public float MassDeathCoefficient;
 
     private void Start()
     {
@@ -60,6 +71,7 @@ public class GameManager : MonoBehaviour
         CurrentResearch = 2;
         Pause = false;
         Countdown = TimeLimit;
+        HealthyChildren = TotalPopulation;
     }
 
     private void Update()
@@ -71,12 +83,22 @@ public class GameManager : MonoBehaviour
 
         if (Countdown > 0)
         {
-            Countdown -= Time.deltaTime;
+            Countdown -= Time.deltaTime * (ArtefactsFound[4] ? 2 : 1);
         }
         else
         {
             Countdown = 0;
             UIM.GameOver();
+        }
+
+        if (DiseaseOutbreakTimer > 0)
+        {
+            DiseaseOutbreakTimer -= Time.deltaTime * (ArtefactsFound[4] ? 2 : 1);
+        }
+        else
+        {
+            DiseaseOutbreakTimer = DiseaseOutbreakFrequency;
+            DiseaseOutbreak();
         }
 
         if (HealthyChildren <= 0 && IllChildren <= 0)
@@ -85,6 +107,11 @@ public class GameManager : MonoBehaviour
         }
 
         UpdateUI();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIM.DoPause();
+        }
     }
 
     void UpdateUI()
@@ -198,10 +225,42 @@ public class GameManager : MonoBehaviour
         NewItemDisplay.ThisItem = Discovery.Output;
         NewItemDisplay.UpdateDisplay();
     }
-
+    
+    void CheckForEffects(string Name)
+    {
+        if (Name == "Artefact of Wealth")
+        {
+            ArtefactsFound[0] = true;
+        }
+        else if (Name == "Artefact of Herbalism")
+        {
+            ArtefactsFound[1] = true;
+        }
+        else if (Name == "Artefact of Stamina")
+        {
+            ArtefactsFound[2] = true;
+        }
+        else if (Name == "Artefact of Knowledge")
+        {
+            ArtefactsFound[3] = true;
+        }
+        else if (Name == "Artefact of Time")
+        {
+            ArtefactsFound[4] = true;
+        }
+        else if (Name == "Artefact of Life")
+        {
+            ArtefactsFound[5] = true;
+            if (SceneManager.GetActiveScene().name != "Endless")
+            {
+                UIM.Victory();
+            }
+        }
+    }
+    
     public void ChangeMoney(int Change)
     {
-        Money += Change;
+        Money += (int) (Change * (ArtefactsFound[0] ? (Change > 0 ? 2 : 0.5f) : 1));
         MoneyText.text = "$ " + Money.ToString();
 
         for (int i = 0; i < UIM.ResearchButtons.Length; i++)
@@ -213,5 +272,20 @@ public class GameManager : MonoBehaviour
         {
             UIM.GameOver();
         }
+    }
+
+    void DiseaseOutbreak()
+    {
+        float SickPopulationPercent = (float)(IllChildren + DeadChildren) / TotalPopulation;
+        float StrengthOfPandemic = 1 + SickPopulationPercent * StrengthOfPandemicCoefficient;
+        int GotSick = (int) (Random.Range(MinimumSurplusOfIllChildren, MinimumSurplusOfIllChildren + StrengthOfPandemic) + Mathf.Pow(IllnessBaseOfExponent, StrengthOfPandemic));
+        int Died = (int) (Random.Range(0, IllChildren) * ProbabilityOfDeath * StrengthOfPandemic * (SickPopulationPercent > MassDeathThreshold ? MassDeathCoefficient : 1));
+
+        GotSick = Mathf.Min(GotSick / (ArtefactsFound[2] ? 2 : 1), HealthyChildren);
+        Died = Mathf.Min(Died / (ArtefactsFound[2] ? 2 : 1), IllChildren);
+
+        HealthyChildren -= GotSick;
+        IllChildren += (GotSick - Died);
+        DeadChildren += Died;
     }
 }
