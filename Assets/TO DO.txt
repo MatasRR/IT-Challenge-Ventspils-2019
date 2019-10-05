@@ -1,11 +1,12 @@
 ﻿TO DO:
-	Papildomi daiktų gebėjimai (Inheritance??)
 	Kenksmingi dalykai (Discovery VS Disaster Window) (bool on a recipe?)
-	Scrollbar drag both to sides and drag items at the same time
-	Susirgimai
+	Scrollbar drag both to sides and drag items at the same time (do we need it?)
 	Tutorial
+	Negative cure?
+	ArtefactStrength as a variable
+	Life Artefact cures children in Endless
 
-Bugs: kol kas nėra
+Bugs:
 
 Idėjos:
 	Druidų kaimeliai ilgai taikiai gyveno su gamta. Tačiau vieną dieną į jų gyvenamas vietas įsiveržė [KAŽKAS] ir harmonija buvo
