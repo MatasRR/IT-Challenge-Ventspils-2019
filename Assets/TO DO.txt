@@ -5,7 +5,7 @@
 	Susirgimai
 	Tutorial
 
-Bugs:
+Bugs: kol kas nėra
 
 Idėjos:
 	Druidų kaimeliai ilgai taikiai gyveno su gamta. Tačiau vieną dieną į jų gyvenamas vietas įsiveržė [KAŽKAS] ir harmonija buvo
