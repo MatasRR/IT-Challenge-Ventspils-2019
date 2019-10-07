@@ -1879,6 +1879,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7c950dc03abd384439242f426fb8eeef, type: 2}
   - {fileID: 11400000, guid: 492496b6e99d87e418ac91928dffc307, type: 2}
   - {fileID: 11400000, guid: 8a13f7cbbb26dff4ebc552390b93eb70, type: 2}
+  - {fileID: 11400000, guid: 3cbce2df9e7bc8c4bad3f28082f91d3c, type: 2}
   ResearchCosts: 00000000000000000a00000064000000e803000010270000
   DiscoveryDisplay: {fileID: 1412601055}
   DiscoveryRewardText: {fileID: 628692847}
@@ -5445,7 +5446,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ThisItem
       value: 
-      objectReference: {fileID: 11400000, guid: 261469a21deec77458f009f5e44bed3e,
+      objectReference: {fileID: 11400000, guid: 30825c6bd5f144c40ad56989fc449c23,
         type: 2}
     - target: {fileID: 3095978505418196082, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -11108,7 +11109,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ThisItem
       value: 
-      objectReference: {fileID: 11400000, guid: a3880925f2559804597ee0b3749e4dd3,
+      objectReference: {fileID: 11400000, guid: cc5860a5ff120eb4c8c2f6f92e3cb1d8,
         type: 2}
     - target: {fileID: 3095978505418196082, guid: d510f19879e489949a2826082f5185fb,
         type: 3}

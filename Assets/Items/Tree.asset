@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Tree
   Description: Huge and strong
-  Value: 0
-  Icon: {fileID: 21300000, guid: 399d97ea5b8b6f64ab0ff5d021d2a971, type: 3}
+  Icon: {fileID: 21300000, guid: e1ed4dd6a44dff749ae7e921a1f472b1, type: 3}
+  SFX: {fileID: 0}
+  Crafted: 0
