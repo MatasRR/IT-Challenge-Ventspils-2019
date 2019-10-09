@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 {
     private GameManager GM;
 
+    public int ButtonOverhang;
+
     public GameObject ItemPanel;
     public GameObject ResearchPanel;
     public GameObject DiscoveryWindow;
@@ -20,8 +22,6 @@ public class UIManager : MonoBehaviour
     public GameObject ResearchVisibilityButton;
     public TextMeshProUGUI ItemVisibilityButtonText;
     public TextMeshProUGUI ResearchVisibilityButtonText;
-
-    public int ButtonOverhang;
 
     public GameObject[] InputSlots;
     public GameObject[] ResearchButtons;

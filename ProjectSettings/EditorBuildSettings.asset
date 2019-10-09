@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: d0f8f41a3009bd147a44fe5483cadf6e
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
-    guid: 103fceedf6f43dc4d900c4ee7378cd2c
+    guid: 2f0a9c61e72629f498297f2e876155a3
   - enabled: 1
     path: Assets/Scenes/Endless.unity
     guid: b3d723e6144f743479787f0d7949f030

@@ -9,45 +9,36 @@ public class GameManager : MonoBehaviour
 {
     private UIManager UIM;
 
+    private Item[] InputItems;
+    private Recipe[] Recipies;
+
+    private Recipe ArtefactOfLifeRecipe;
+
     [HideInInspector]
     public bool Pause;
 
     [HideInInspector]
-    public bool[] ArtefactsFound = new bool[4];
+    public int CurrentResearch;
 
-    private Item[] InputItems;
-    
-    public Recipe[] Recipies;
+    [HideInInspector]
+    public bool[] ArtefactsFound = new bool[5];
+
+
+    [Header("General Numbers")]
+
     public int[] ResearchCosts;
 
-    public Display DiscoveryDisplay;
-    public TextMeshProUGUI DiscoveryRewardText;
-
-    public Transform ContentGO;
-    public GameObject NewItemGO;
-
-    public TextMeshProUGUI MoneyText;
-    public TextMeshProUGUI CountdownText;
-    public Image CountdownImage;
     public int Money;
     public float TimeLimit;
     private float Countdown;
-
-    [HideInInspector]
-    public int CurrentResearch;
-
-    public TextMeshProUGUI HealthyChildrenText;
-    public TextMeshProUGUI IllChildrenText;
-    public TextMeshProUGUI DeadChildrenText;
-
-    public Image HealthyChildrenImage;
-    public Image IllChildrenImage;
-    public Image DeadChildrenImage;
 
     public int TotalPopulation;
     private int HealthyChildren;
     private int IllChildren;
     private int DeadChildren;
+
+
+    [Header("Disease Outbreaks")]
 
     public float DiseaseOutbreakFrequency;
     private float DiseaseOutbreakTimer;
@@ -58,10 +49,35 @@ public class GameManager : MonoBehaviour
     public float MassDeathThreshold;
     public float MassDeathCoefficient;
 
-    private Recipe ArtefactOfLifeRecipe;
+
+    [Header("UI")]
+
+    public Display DiscoveryDisplay;
+    public TextMeshProUGUI DiscoveryRewardText;
+
+    public Transform ContentGO;
+    public GameObject NewItemGO;
+
+    public TextMeshProUGUI MoneyText;
+    public TextMeshProUGUI CountdownText;
+    public Image CountdownImage;
+
+    public TextMeshProUGUI HealthyChildrenText;
+    public TextMeshProUGUI IllChildrenText;
+    public TextMeshProUGUI DeadChildrenText;
+
+    public Image HealthyChildrenImage;
+    public Image IllChildrenImage;
+    public Image DeadChildrenImage;
+    
 
     private void Start()
     {
+        UIM = gameObject.GetComponent<UIManager>();
+        InputItems = new Item[UIM.InputSlots.Length];
+
+        Recipies = Resources.FindObjectsOfTypeAll<Recipe>();
+
         foreach (Recipe r in Recipies)
         {
             r.Output.Crafted = false;
@@ -70,10 +86,6 @@ public class GameManager : MonoBehaviour
                 ArtefactOfLifeRecipe = r;
             }
         }
-        
-        UIM = gameObject.GetComponent<UIManager>();
-
-        InputItems = new Item[UIM.InputSlots.Length];
 
         ChangeMoney(0);
         CurrentResearch = 2;
@@ -89,6 +101,23 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        Countdowns();
+        UpdateUI();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIM.DoPause();
+        }
+
+        if (AllArtefactsFound() && !ArtefactsFound[ArtefactsFound.Length - 1])
+        {
+            ArtefactsFound[ArtefactsFound.Length - 1] = true;
+            SuccessfulResearch(ArtefactOfLifeRecipe);
+        }
+    }
+
+    void Countdowns()
+    {
         if (Countdown > 0)
         {
             Countdown -= Time.deltaTime * (ArtefactsFound[3] ? 2 : 1);
@@ -112,19 +141,6 @@ public class GameManager : MonoBehaviour
         if (HealthyChildren <= 0 && IllChildren <= 0)
         {
             UIM.GameOver();
-        }
-
-        UpdateUI();
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UIM.DoPause();
-        }
-
-        if (AllArtefactsFound() && !ArtefactsFound[ArtefactsFound.Length - 1])
-        {
-            ArtefactsFound[ArtefactsFound.Length - 1] = true;
-            SuccessfulResearch(ArtefactOfLifeRecipe);
         }
     }
 
@@ -250,7 +266,7 @@ public class GameManager : MonoBehaviour
         {
             ArtefactsFound[1] = true;
         }
-        else if (Name == "Artefact of Stamina")
+        else if (Name == "Artefact of Resilience")
         {
             ArtefactsFound[2] = true;
         }

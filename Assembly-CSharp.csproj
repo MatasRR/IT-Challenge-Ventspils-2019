@@ -69,6 +69,8 @@
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Recipe.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\Tutorial.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\TutorialDragAndDrop.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <None Include="Assets\Imported Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Imported Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
