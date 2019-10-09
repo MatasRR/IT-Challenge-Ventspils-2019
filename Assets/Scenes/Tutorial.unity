@@ -1187,6 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c32de26dce2a9b4eaf9dca613426637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ButtonOverhang: 10
   ItemPanel: {fileID: 1294652985}
   ResearchPanel: {fileID: 95922452}
   DiscoveryWindow: {fileID: 119343917}
@@ -1197,7 +1198,6 @@ MonoBehaviour:
   ResearchVisibilityButton: {fileID: 476038889}
   ItemVisibilityButtonText: {fileID: 375114}
   ResearchVisibilityButtonText: {fileID: 1900908279}
-  ButtonOverhang: 10
   InputSlots:
   - {fileID: 546254283}
   - {fileID: 1741557913}
@@ -4932,16 +4932,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1957387895}
     m_Modifications:
-    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
-        type: 3}
-      propertyPath: YDragLimit
-      value: 400
-      objectReference: {fileID: 0}
     - target: {fileID: 5546763764880048877, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
       propertyPath: m_Name
@@ -5020,7 +5010,7 @@ PrefabInstance:
     - target: {fileID: 5887767414793636126, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 5887767414793636126, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
@@ -5051,6 +5041,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
+        type: 3}
+      propertyPath: YDragLimit
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1821853416139997409, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
@@ -6869,16 +6869,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1957387895}
     m_Modifications:
-    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
-        type: 3}
-      propertyPath: YDragLimit
-      value: 400
-      objectReference: {fileID: 0}
     - target: {fileID: 5546763764880048877, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
       propertyPath: m_Name
@@ -6957,7 +6947,7 @@ PrefabInstance:
     - target: {fileID: 5887767414793636126, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 5887767414793636126, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
@@ -6988,6 +6978,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
+        type: 3}
+      propertyPath: YDragLimit
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1821853416139997409, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
@@ -7060,16 +7060,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1957387895}
     m_Modifications:
-    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
-        type: 3}
-      propertyPath: YDragLimit
-      value: 400
-      objectReference: {fileID: 0}
     - target: {fileID: 5546763764880048877, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
       propertyPath: m_Name
@@ -7148,7 +7138,7 @@ PrefabInstance:
     - target: {fileID: 5887767414793636126, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 5887767414793636126, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
@@ -7179,6 +7169,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812406972359472957, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
+        type: 3}
+      propertyPath: YDragLimit
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1821853416139997409, guid: 7f6a25fc4c7bea543b9c9d5cffcc4bc0,
         type: 3}
