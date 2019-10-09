@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool Pause;
 
-    private bool[] ArtefactsFound = new bool[5];
+    [HideInInspector]
+    public bool[] ArtefactsFound = new bool[4];
+
     private Item[] InputItems;
     
     public Recipe[] Recipies;
@@ -56,11 +58,17 @@ public class GameManager : MonoBehaviour
     public float MassDeathThreshold;
     public float MassDeathCoefficient;
 
+    private Recipe ArtefactOfLifeRecipe;
+
     private void Start()
     {
         foreach (Recipe r in Recipies)
         {
             r.Output.Crafted = false;
+            if (r.Output.Name == "Artefact of Life")
+            {
+                ArtefactOfLifeRecipe = r;
+            }
         }
         
         UIM = gameObject.GetComponent<UIManager>();
@@ -83,7 +91,7 @@ public class GameManager : MonoBehaviour
 
         if (Countdown > 0)
         {
-            Countdown -= Time.deltaTime * (ArtefactsFound[4] ? 2 : 1);
+            Countdown -= Time.deltaTime * (ArtefactsFound[3] ? 2 : 1);
         }
         else
         {
@@ -93,7 +101,7 @@ public class GameManager : MonoBehaviour
 
         if (DiseaseOutbreakTimer > 0)
         {
-            DiseaseOutbreakTimer -= Time.deltaTime * (ArtefactsFound[4] ? 2 : 1);
+            DiseaseOutbreakTimer -= Time.deltaTime * (ArtefactsFound[3] ? 2 : 1);
         }
         else
         {
@@ -111,6 +119,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             UIM.DoPause();
+        }
+
+        if (AllArtefactsFound() && !ArtefactsFound[ArtefactsFound.Length - 1])
+        {
+            ArtefactsFound[ArtefactsFound.Length - 1] = true;
+            SuccessfulResearch(ArtefactOfLifeRecipe);
         }
     }
 
@@ -240,22 +254,26 @@ public class GameManager : MonoBehaviour
         {
             ArtefactsFound[2] = true;
         }
-        else if (Name == "Artefact of Knowledge")
+        else if (Name == "Artefact of Time")
         {
             ArtefactsFound[3] = true;
         }
-        else if (Name == "Artefact of Time")
+        else if (Name == "Artefact of Life")
         {
             ArtefactsFound[4] = true;
         }
-        else if (Name == "Artefact of Life")
+    }
+
+    bool AllArtefactsFound()
+    {
+        for (int i = 0; i < ArtefactsFound.Length - 1; i++)
         {
-            ArtefactsFound[5] = true;
-            if (SceneManager.GetActiveScene().name != "Endless")
+            if (!ArtefactsFound[i])
             {
-                UIM.Victory();
+                return false;
             }
         }
+        return true;
     }
     
     public void ChangeMoney(int Change)

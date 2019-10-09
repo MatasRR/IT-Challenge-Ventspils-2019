@@ -98,6 +98,11 @@ public class UIManager : MonoBehaviour
     {
         GM.Pause = false;
         DiscoveryWindow.SetActive(false);
+
+        if (SceneManager.GetActiveScene().name != "Endless" && GM.ArtefactsFound[GM.ArtefactsFound.Length - 1])
+        {
+            Victory();
+        }
     }
 
     public void Restart()

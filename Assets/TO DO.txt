@@ -5,6 +5,7 @@
 	Susirgimai
 	Tutorial
 	Negative cure?
+	void Start () {FindAllObjectsOfType<Recipe>()} ?? vietoj rankinio receptų tampymo
 
 Bugs:
 
