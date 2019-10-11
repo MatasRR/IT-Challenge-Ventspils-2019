@@ -1,7 +1,9 @@
 ﻿TO DO:
-	Endless didėja vaikų skaičius
 	Item SFX
+
+	Sprites:
+	book, fire, glass, gold, paper, raddish, rainbow, rock, sand?, shield, silk, snake
 
 Bugs:
 	Tutorial double clicks
-	1 recipe found
+	1 recipe found !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

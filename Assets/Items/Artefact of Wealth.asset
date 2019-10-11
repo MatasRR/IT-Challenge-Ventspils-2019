@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Artefact of Wealth
   m_EditorClassIdentifier: 
   Description: Who doesn't want extra cash??
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: c24d6fc0ad91bec4bb5e1cdd40fa3d18, type: 3}
   SFX: {fileID: 0}
   Crafted: 0

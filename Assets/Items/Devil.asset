@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Devil
   m_EditorClassIdentifier: 
   Description: 
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: a7e1fc41970f9584594dcab620028e44, type: 3}
   SFX: {fileID: 0}
   Crafted: 0

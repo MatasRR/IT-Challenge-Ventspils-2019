@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Butterfly
   m_EditorClassIdentifier: 
   Description: 
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: c8d24f4b62092464e9d3d791b99d0be8, type: 3}
   SFX: {fileID: 0}
   Crafted: 0

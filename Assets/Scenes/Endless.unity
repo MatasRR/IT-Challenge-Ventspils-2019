@@ -2127,11 +2127,12 @@ MonoBehaviour:
   StrengthOfPandemicCoefficient: 5
   MassDeathThreshold: 0.9
   MassDeathCoefficient: 20
+  EndlessArrivedNewIllChildren: 0.01
   TimeReduction: 2
   WealthIncrease: 3
   HerbalismIncresse: 10
   ResilienceIncrese: 3
-  LifeHealCount: 1
+  LifeHealCount: 10
   DiscoveryDisplay: {fileID: 1412601055}
   DiscoveryRewardText: {fileID: 628692847}
   ContentGO: {fileID: 1957387895}
