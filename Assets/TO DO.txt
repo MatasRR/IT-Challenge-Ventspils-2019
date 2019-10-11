@@ -1,9 +1,8 @@
 ﻿TO DO:
-	void Start () {FindAllObjectsOfType<Recipe>()} ?? vietoj rankinio receptų tampymo
 	Visual artefact acquisition UI (corner?)
 	No artefacts in the item panel
-	Jei bus neigiamų cure, taisyti GameManager
 	Audio sliders!
+	2 outputs!
 
 Bugs:
 	Tutorial double clicks

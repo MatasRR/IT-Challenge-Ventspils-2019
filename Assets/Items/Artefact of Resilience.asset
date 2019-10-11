@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab3ad45337236249b9a1f89398d1568, type: 3}
   m_Name: Artefact of Resilience
   m_EditorClassIdentifier: 
-  Name: Artefact of Stamina
   Description: A beacon of physical health and strength
   Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
   SFX: {fileID: 0}

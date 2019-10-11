@@ -1875,7 +1875,7 @@ MonoBehaviour:
   CurrentResearch: 0
   ArtefactsFound: 00000000
   ResearchCosts: 00000000000000000a00000064000000
-  Money: 150
+  Money: 1000
   TimeLimit: 180
   TotalPopulation: 1000
   DiseaseOutbreakFrequency: 1
@@ -4292,7 +4292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -100}
+  m_AnchoredPosition: {x: -670, y: -100}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934976314
@@ -4348,7 +4348,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 260
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -4600,7 +4600,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ThisItem
       value: 
-      objectReference: {fileID: 11400000, guid: 30825c6bd5f144c40ad56989fc449c23,
+      objectReference: {fileID: 11400000, guid: 709db01e9d52cdf4a93fcb32302e3ad2,
         type: 2}
     - target: {fileID: 3095978505418196082, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -5118,7 +5118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -50}
+  m_AnchoredPosition: {x: -920, y: -100}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011659473
@@ -5174,7 +5174,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 260
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -7307,7 +7307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200, y: -150}
+  m_AnchoredPosition: {x: -420, y: -100}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690880433
@@ -7363,7 +7363,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 260
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -8951,7 +8951,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ThisItem
       value: 
-      objectReference: {fileID: 11400000, guid: 709db01e9d52cdf4a93fcb32302e3ad2,
+      objectReference: {fileID: 11400000, guid: f6edf6a7e6a6a9d4fa60e4f0d30903a8,
         type: 2}
     - target: {fileID: 3095978505418196082, guid: d510f19879e489949a2826082f5185fb,
         type: 3}

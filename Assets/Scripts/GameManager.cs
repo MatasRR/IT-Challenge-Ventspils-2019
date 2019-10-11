@@ -157,9 +157,9 @@ public class GameManager : MonoBehaviour
 
     void UpdateUI()
     {
-        HealthyChildrenText.text = "Healthy children: " + HealthyChildren.ToString();
-        IllChildrenText.text = "Ill children: " + IllChildren.ToString();
-        DeadChildrenText.text = "Dead children: " + DeadChildren.ToString();
+        HealthyChildrenText.text = HealthyChildren.ToString();
+        IllChildrenText.text = IllChildren.ToString();
+        DeadChildrenText.text = DeadChildren.ToString();
         CountdownText.text = Mathf.Ceil(Countdown).ToString();
         if (Countdown / TimeLimit < 0.2f && CountdownText.color != Color.red)
         {
@@ -195,6 +195,7 @@ public class GameManager : MonoBehaviour
 
         foreach (Recipe r in Recipies)
         {
+            Debug.Log(r.Output[0].name);
             if (r.Input.Length == CurrentResearch && CheckCraftability(r))
             {
                 if (CheckInput(r))
@@ -230,7 +231,6 @@ public class GameManager : MonoBehaviour
                 return true;
             }
         }
-        
         return false;
     }
 
@@ -268,7 +268,16 @@ public class GameManager : MonoBehaviour
         Pause = true;
         Discovery.Output[No].Crafted = true;
         ChangeMoney(Discovery.MoneyReward);
-        int NumberOfCuredChildren = Mathf.Min(IllChildren, Discovery.CureReward);
+
+        int NumberOfCuredChildren;
+        if (Discovery.CureReward >= 0)
+        {
+            NumberOfCuredChildren = Mathf.Min((IllChildren), (int)(Discovery.CureReward * (ArtefactsFound[1] ? HerbalismIncresse : 1)));
+        }
+        else
+        {
+            NumberOfCuredChildren = -Mathf.Min(HealthyChildren, (int)(-Discovery.CureReward / (ArtefactsFound[1] ? HerbalismIncresse : 1)));
+        }
         IllChildren -= NumberOfCuredChildren;
         HealthyChildren += NumberOfCuredChildren;
 

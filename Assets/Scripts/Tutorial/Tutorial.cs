@@ -215,9 +215,9 @@ public class Tutorial : MonoBehaviour
 
     void UpdateUI()
     {
-        HealthyChildrenText.text = "Healthy children: " + HealthyChildren.ToString();
-        IllChildrenText.text = "Ill children: " + IllChildren.ToString();
-        DeadChildrenText.text = "Dead children: " + DeadChildren.ToString();
+        HealthyChildrenText.text = HealthyChildren.ToString();
+        IllChildrenText.text = IllChildren.ToString();
+        DeadChildrenText.text = DeadChildren.ToString();
         CountdownText.text = Mathf.Ceil(Countdown).ToString();
 
         if (Countdown / TimeLimit < 0.2f && CountdownText.color != Color.red)

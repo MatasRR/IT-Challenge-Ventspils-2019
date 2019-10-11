@@ -16,6 +16,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 641c3a7a6ccf4b04f95b07a0c387f0f5, type: 2}
   - {fileID: 11400000, guid: bcb55b42367e426498a50e6e3fc56d41, type: 2}
   - {fileID: 11400000, guid: 600ae227339050241b614e027725d270, type: 2}
-  Output: {fileID: 11400000, guid: b5d8829db179797499c0a12f38e86c14, type: 2}
+  Output:
+  - {fileID: 11400000, guid: b5d8829db179797499c0a12f38e86c14, type: 2}
+  - {fileID: 11400000, guid: 0729c80b3306b8742916a0e9111eadc8, type: 2}
   MoneyReward: 0
   CureReward: 0
