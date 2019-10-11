@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource MusicSource;
     public AudioSource SFXSource;
+
+    public Slider MusicSlider;
+    public Slider SFXSlider;
 
     public float PitchRandomness;
     private float OriginalSFXPitch;
@@ -29,6 +33,12 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         OriginalSFXPitch = SFXSource.pitch;
+    }
+
+    private void Update()
+    {
+        MusicSource.volume = MusicSlider.value;
+        SFXSource.volume = SFXSlider.value;
     }
 
     public void PlaySFX(AudioClip SFX)
