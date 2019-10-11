@@ -2130,6 +2130,7 @@ MonoBehaviour:
   WealthIncrease: 3
   HerbalismIncresse: 10
   ResilienceIncrese: 3
+  LifeHealCount: 1
   DiscoveryDisplay: {fileID: 1412601055}
   DiscoveryRewardText: {fileID: 628692847}
   ContentGO: {fileID: 1957387895}

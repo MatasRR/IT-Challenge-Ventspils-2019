@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     public float WealthIncrease;
     public float HerbalismIncresse;
     public float ResilienceIncrese;
+    public int LifeHealCount;
     private bool ArtefactCreated;
 
 
@@ -371,6 +372,13 @@ public class GameManager : MonoBehaviour
 
     void DiseaseOutbreak()
     {
+        if (ArtefactsFound[ArtefactsFound.Length - 1])
+        {
+            int NumberOfChildrenHealed = Mathf.Min(LifeHealCount, IllChildren);
+            HealthyChildren += NumberOfChildrenHealed;
+            IllChildren -= NumberOfChildrenHealed;
+        }
+
         float SickPopulationPercent = (float)(IllChildren + DeadChildren) / TotalPopulation;
         float StrengthOfPandemic = 1 + SickPopulationPercent * StrengthOfPandemicCoefficient;
         int GotSick = (int) (Random.Range(MinimumSurplusOfIllChildren, MinimumSurplusOfIllChildren + StrengthOfPandemic) + Mathf.Pow(IllnessBaseOfExponent, StrengthOfPandemic));

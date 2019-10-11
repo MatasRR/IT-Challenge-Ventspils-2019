@@ -1,5 +1,6 @@
 ﻿TO DO:
-	Audio sliders!
+	Life in endless
+	Intro
 
 Bugs:
 	Tutorial double clicks
