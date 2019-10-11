@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: Does it bite?
   Icon: {fileID: 21300000, guid: 30569f63b4b27824d8fbf18a3a17e63b, type: 3}
-  SFX: {fileID: 0}
+  SFX: {fileID: 8300000, guid: 34e624044f0613f48846f94f39a42c35, type: 3}
   Crafted: 0
