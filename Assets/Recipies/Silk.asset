@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f6edf6a7e6a6a9d4fa60e4f0d30903a8, type: 2}
   Output:
   - {fileID: 11400000, guid: ee2c73d6cb0936d4a95f4838a0acb79f, type: 2}
-  MoneyReward: 0
+  MoneyReward: 40
   CureReward: 0
