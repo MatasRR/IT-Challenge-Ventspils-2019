@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab3ad45337236249b9a1f89398d1568, type: 3}
   m_Name: Caterpillar
   m_EditorClassIdentifier: 
-  Description: 
+  Description: It may become something even more beautiful
   Icon: {fileID: 21300000, guid: 04e1c816e25abbf4c9dd0ad9ce5163d8, type: 3}
   SFX: {fileID: 8300000, guid: ca431e8b433b0c4499eb6eab2ef49b64, type: 3}
   Crafted: 0

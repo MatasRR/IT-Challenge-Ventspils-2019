@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab3ad45337236249b9a1f89398d1568, type: 3}
   m_Name: Branch
   m_EditorClassIdentifier: 
-  Description: 
+  Description: Don't break them!
   Icon: {fileID: 21300000, guid: 9fc109fa79a303f45ac84ac45750145e, type: 3}
   SFX: {fileID: 8300000, guid: fbcae3ddf93b4114fbb232a921c91936, type: 3}
   Crafted: 0
