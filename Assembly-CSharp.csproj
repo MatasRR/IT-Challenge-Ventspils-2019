@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Display.cs" />
     <Compile Include="Assets\Scripts\DragAndDrop.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Intro.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Recipe.cs" />

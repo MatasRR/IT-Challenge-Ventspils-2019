@@ -50,6 +50,14 @@ public class GameManager : MonoBehaviour
     public float MassDeathCoefficient;
 
 
+    [Header("Artefacts")]
+
+    public float TimeReduction;
+    public float WealthIncrease;
+    public float HerbalismIncresse;
+    public float ResilienceIncrese;
+
+
     [Header("UI")]
 
     public Display DiscoveryDisplay;
@@ -120,7 +128,7 @@ public class GameManager : MonoBehaviour
     {
         if (Countdown > 0)
         {
-            Countdown -= Time.deltaTime * (ArtefactsFound[3] ? 2 : 1);
+            Countdown -= Time.deltaTime / (ArtefactsFound[3] ? TimeReduction : 1);
         }
         else
         {
@@ -130,7 +138,7 @@ public class GameManager : MonoBehaviour
 
         if (DiseaseOutbreakTimer > 0)
         {
-            DiseaseOutbreakTimer -= Time.deltaTime * (ArtefactsFound[3] ? 2 : 1);
+            DiseaseOutbreakTimer -= Time.deltaTime / (ArtefactsFound[3] ? TimeReduction : 1);
         }
         else
         {
@@ -294,7 +302,7 @@ public class GameManager : MonoBehaviour
     
     public void ChangeMoney(int Change)
     {
-        Money += (int) (Change * (ArtefactsFound[0] ? (Change > 0 ? 2 : 0.5f) : 1));
+        Money += (int) (Change * (ArtefactsFound[0] ? (Change > 0 ? WealthIncrease : 1/WealthIncrease) : 1));
         MoneyText.text = "$ " + Money.ToString();
 
         for (int i = 0; i < UIM.ResearchButtons.Length; i++)
@@ -315,8 +323,8 @@ public class GameManager : MonoBehaviour
         int GotSick = (int) (Random.Range(MinimumSurplusOfIllChildren, MinimumSurplusOfIllChildren + StrengthOfPandemic) + Mathf.Pow(IllnessBaseOfExponent, StrengthOfPandemic));
         int Died = (int) (Random.Range(0, IllChildren) * ProbabilityOfDeath * StrengthOfPandemic * (SickPopulationPercent > MassDeathThreshold ? MassDeathCoefficient : 1));
 
-        GotSick = Mathf.Min(GotSick / (ArtefactsFound[2] ? 2 : 1), HealthyChildren);
-        Died = Mathf.Min(Died / (ArtefactsFound[2] ? 2 : 1), IllChildren);
+        GotSick = Mathf.Min((int)(GotSick / (ArtefactsFound[2] ? ResilienceIncrese : 1)), HealthyChildren);
+        Died = Mathf.Min((int)(Died / (ArtefactsFound[2] ? ResilienceIncrese : 1)), IllChildren);
 
         HealthyChildren -= GotSick;
         IllChildren += (GotSick - Died);

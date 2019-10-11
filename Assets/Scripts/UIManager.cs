@@ -112,7 +112,7 @@ public class UIManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
     public void NextLevel()
