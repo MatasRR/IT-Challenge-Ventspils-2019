@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Wild Frog
   m_EditorClassIdentifier: 
   Description: 
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
-  SFX: {fileID: 8300000, guid: b71444aaa3b6b1644b3c1ff0d6ab7b45, type: 3}
+  Icon: {fileID: 21300000, guid: 7c448bc67abd36544b4e5e20d9dea8da, type: 3}
+  SFX: {fileID: 0}
   Crafted: 0

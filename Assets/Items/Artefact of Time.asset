@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Artefact of Time
   m_EditorClassIdentifier: 
   Description: I can bend the time itself
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: e92a8138caa3da04cb35dc4807f77c50, type: 3}
   SFX: {fileID: 0}
   Crafted: 0

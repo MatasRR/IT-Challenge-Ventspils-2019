@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   Description: Here 2 Objects
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: 4148e7dc3d3f9284494fc5e98d5a1187, type: 3}
   SFX: {fileID: 8300000, guid: 95e7d2e51ed5fdf43aa7827a7d14d56e, type: 3}
   Crafted: 0

@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public float StrengthOfPandemicCoefficient;
     public float MassDeathThreshold;
     public float MassDeathCoefficient;
+    public float EndlessArrivedNewIllChildren;
 
 
     [Header("Artefacts")]
@@ -392,5 +393,10 @@ public class GameManager : MonoBehaviour
         HealthyChildren -= GotSick;
         IllChildren += (GotSick - Died);
         DeadChildren += Died;
+
+        /// Other levels EndlessArrivedNewIllChildren = 0;
+        EndlessArrivedNewIllChildren *= StrengthOfPandemic;
+        TotalPopulation += (int)EndlessArrivedNewIllChildren;
+        IllChildren += (int)EndlessArrivedNewIllChildren;
     }
 }
