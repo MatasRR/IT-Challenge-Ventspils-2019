@@ -1,7 +1,6 @@
 ﻿TO DO:
 	Endless didėja vaikų skaičius
 	Item SFX
-	Rasti dramatišką intro muziką
 
 Bugs:
 	Tutorial double clicks
