@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     public float WealthIncrease;
     public float HerbalismIncresse;
     public float ResilienceIncrese;
+    private bool ArtefactCreated;
 
 
     [Header("UI")]
@@ -77,6 +78,8 @@ public class GameManager : MonoBehaviour
     public Image HealthyChildrenImage;
     public Image IllChildrenImage;
     public Image DeadChildrenImage;
+
+    public GameObject[] ArtefactUI;
     
 
     private void Start()
@@ -193,9 +196,10 @@ public class GameManager : MonoBehaviour
             InputItems[i] = UIM.InputSlots[i].GetComponent<Display>().ThisItem;
         }
 
+        ArtefactCreated = true;
+
         foreach (Recipe r in Recipies)
         {
-            Debug.Log(r.Output[0].name);
             if (r.Input.Length == CurrentResearch && CheckCraftability(r))
             {
                 if (CheckInput(r))
@@ -267,6 +271,7 @@ public class GameManager : MonoBehaviour
     {
         Pause = true;
         Discovery.Output[No].Crafted = true;
+        CheckForEffects(Discovery.Output[No].name);
         ChangeMoney(Discovery.MoneyReward);
 
         int NumberOfCuredChildren;
@@ -287,12 +292,25 @@ public class GameManager : MonoBehaviour
         DiscoveryDisplay.ThisItem = Discovery.Output[No];
         DiscoveryDisplay.UpdateDisplay();
 
-        /// Item Panel
-        GameObject NewItem = Instantiate(NewItemGO);
-        NewItem.transform.SetParent(ContentGO);
-        Display NewItemDisplay = NewItem.GetComponent<Display>();
-        NewItemDisplay.ThisItem = Discovery.Output[No];
-        NewItemDisplay.UpdateDisplay();
+        if (ArtefactCreated)
+        {
+            for (int i = 0; i < ArtefactsFound.Length; i++)
+            {
+                if (ArtefactsFound[i])
+                {
+                    ArtefactUI[i].SetActive(true);
+                }
+            }
+        }
+        else
+        {
+            /// Item Panel
+            GameObject NewItem = Instantiate(NewItemGO);
+            NewItem.transform.SetParent(ContentGO);
+            Display NewItemDisplay = NewItem.GetComponent<Display>();
+            NewItemDisplay.ThisItem = Discovery.Output[No];
+            NewItemDisplay.UpdateDisplay();
+        }
     }
     
     void CheckForEffects(string Name)
@@ -316,6 +334,10 @@ public class GameManager : MonoBehaviour
         else if (Name == "Artefact of Life")
         {
             ArtefactsFound[4] = true;
+        }
+        else
+        {
+            ArtefactCreated = false;
         }
     }
 

@@ -1,11 +1,9 @@
 ﻿TO DO:
-	Visual artefact acquisition UI (corner?)
-	No artefacts in the item panel
 	Audio sliders!
-	2 outputs!
 
 Bugs:
 	Tutorial double clicks
+	1 recipe found
 
 Idėjos:
 	Druidų kaimeliai ilgai taikiai gyveno su gamta. Tačiau vieną dieną į jų gyvenamas vietas įsiveržė [KAŽKAS] ir harmonija buvo
