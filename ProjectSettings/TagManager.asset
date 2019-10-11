@@ -8,6 +8,8 @@ TagManager:
   - Slot
   - Game Manager
   - Audio Manager
+  - Music Slider
+  - SFX Slider
   layers:
   - Default
   - TransparentFX

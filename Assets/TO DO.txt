@@ -1,17 +1,12 @@
 ﻿TO DO:
 	Life in endless
 	Intro
+	Endless didėja vaikų skaičius
+	Item SFX
+	Rasti dramatišką intro muziką
+	Drag'int artefaktus į UI žaidime (visus lygius) ir intro
+	Slider Tags
 
 Bugs:
 	Tutorial double clicks
 	1 recipe found
-
-Idėjos:
-	Druidų kaimeliai ilgai taikiai gyveno su gamta. Tačiau vieną dieną į jų gyvenamas vietas įsiveržė [KAŽKAS] ir harmonija buvo
-	sutrikdyta. Nuo tada druidų vaikai pradėjo sirgti įvairiausiomis ligomis, kartais net be paaiškinamos priežasties. Tavo misija:
-	išgydyti vaikus ir atstatyti pusiausvyrą.
-	Sklinda gandai, kad senovės druidų alchemikai yra sukūrę penkis artefaktus, turinčius magiškų galių, tačiau pradingusius. Vis
-	dėlto tu gali atrasti šiuos artefaktus ir juos sujungti į vieną megaartefaktą, išspręsiantį druidų problemas.
-	5 artefacts combined - victory (Artefact of Wealth (*2 money rewards), Artefact of Knowledge (suggests recipies depending on
-	current input), Artefact of Stamina (slower illness spread rate), Artefact of Time (slows time flow), Artefact of Herbalism
-	(stronger cures) => Artefact of Life)
