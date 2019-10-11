@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Leaf
   m_EditorClassIdentifier: 
   Description: 
-  Icon: {fileID: 21300000, guid: 45afced7cc29b774fafb051e4bb73a1e, type: 3}
+  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
   SFX: {fileID: 8300000, guid: 02e7b1e03d4afc24a95671610c6bef31, type: 3}
   Crafted: 0

@@ -25,7 +25,7 @@ public class Menu : MonoBehaviour
         switch (Action)
         {
             case 1:
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(1);
                 break;
             case 2:
                 Application.Quit();
