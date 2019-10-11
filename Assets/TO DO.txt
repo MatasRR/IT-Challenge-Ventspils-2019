@@ -1,11 +1,7 @@
 ﻿TO DO:
-	Life in endless
-	Intro
 	Endless didėja vaikų skaičius
 	Item SFX
 	Rasti dramatišką intro muziką
-	Drag'int artefaktus į UI žaidime (visus lygius) ir intro
-	Slider Tags
 
 Bugs:
 	Tutorial double clicks
