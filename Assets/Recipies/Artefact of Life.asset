@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Artefact of Life
   m_EditorClassIdentifier: 
   Input: []
-  Output: {fileID: 11400000, guid: e0d61c717e02ed14992c47b98147e83e, type: 2}
+  Output:
+  - {fileID: 11400000, guid: e0d61c717e02ed14992c47b98147e83e, type: 2}
   MoneyReward: 100
   CureReward: 1000

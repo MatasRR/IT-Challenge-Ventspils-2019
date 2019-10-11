@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Tree
   m_EditorClassIdentifier: 
   Input:
-  - {fileID: 11400000, guid: a3880925f2559804597ee0b3749e4dd3, type: 2}
+  - {fileID: 11400000, guid: 641c3a7a6ccf4b04f95b07a0c387f0f5, type: 2}
   - {fileID: 11400000, guid: 709db01e9d52cdf4a93fcb32302e3ad2, type: 2}
-  Output: {fileID: 11400000, guid: 600ae227339050241b614e027725d270, type: 2}
+  Output:
+  - {fileID: 11400000, guid: 600ae227339050241b614e027725d270, type: 2}
   MoneyReward: 20
-  CureReward: 5
+  CureReward: 20

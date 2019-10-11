@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e3e3d5aaf3b354aac3eb76bf3d1bf9, type: 3}
+  m_Name: Blue fluid
+  m_EditorClassIdentifier: 
+  Input:
+  - {fileID: 11400000, guid: 709db01e9d52cdf4a93fcb32302e3ad2, type: 2}
+  - {fileID: 11400000, guid: d81203c57f6093446b660365f3a79a82, type: 2}
+  Output:
+  - {fileID: 11400000, guid: fd2120f52ec3a8b42a3f07a225722aaf, type: 2}
+  MoneyReward: 200
+  CureReward: 20
