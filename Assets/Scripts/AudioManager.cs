@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -33,12 +34,21 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         OriginalSFXPitch = SFXSource.pitch;
+
+        if (GameObject.FindGameObjectWithTag("Music Slider") != null)
+        {
+            MusicSlider = GameObject.FindGameObjectWithTag("Music Slider").GetComponent<Slider>();
+            SFXSlider = GameObject.FindGameObjectWithTag("SFX Slider").GetComponent<Slider>();
+        }
     }
 
     private void Update()
     {
-        MusicSource.volume = MusicSlider.value;
-        SFXSource.volume = SFXSlider.value;
+        if (MusicSlider != null)
+        {
+            MusicSource.volume = MusicSlider.value;
+            SFXSource.volume = SFXSlider.value;
+        }
     }
 
     public void PlaySFX(AudioClip SFX)
