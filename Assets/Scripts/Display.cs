@@ -22,7 +22,7 @@ public class Display : MonoBehaviour
     {
         if (ThisItem != null)
         {
-            Name.text = ThisItem.Name;
+            Name.text = ThisItem.name;
             Description.text = ThisItem.Description;
             Icon.sprite = ThisItem.Icon;
 

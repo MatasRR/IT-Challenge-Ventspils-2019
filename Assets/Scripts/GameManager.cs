@@ -88,10 +88,13 @@ public class GameManager : MonoBehaviour
 
         foreach (Recipe r in Recipies)
         {
-            r.Output.Crafted = false;
-            if (r.Output.Name == "Artefact of Life")
+            foreach (Item i in r.Output)
             {
-                ArtefactOfLifeRecipe = r;
+                i.Crafted = false;
+                if (i.name == "Artefact of Life")
+                {
+                    ArtefactOfLifeRecipe = r;
+                }
             }
         }
 
@@ -120,7 +123,7 @@ public class GameManager : MonoBehaviour
         if (AllArtefactsFound() && !ArtefactsFound[ArtefactsFound.Length - 1])
         {
             ArtefactsFound[ArtefactsFound.Length - 1] = true;
-            SuccessfulResearch(ArtefactOfLifeRecipe);
+            SuccessfulResearch(ArtefactOfLifeRecipe, 0);
         }
     }
 
@@ -192,11 +195,17 @@ public class GameManager : MonoBehaviour
 
         foreach (Recipe r in Recipies)
         {
-            if (!r.Output.Crafted && r.Input.Length == CurrentResearch)
+            if (r.Input.Length == CurrentResearch && CheckCraftability(r))
             {
-                if (CheckRecipe(r))
+                if (CheckInput(r))
                 {
-                    SuccessfulResearch(r);
+                    int No = Random.Range(0, r.Output.Length);
+                    while (r.Output[No].Crafted)
+                    {
+                        No = Random.Range(0, r.Output.Length);
+                    }
+
+                    SuccessfulResearch(r, No);
                 }
             }
         }
@@ -212,7 +221,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    bool CheckRecipe (Recipe Target)
+    bool CheckCraftability(Recipe Target)
+    {
+        foreach (Item i in Target.Output)
+        {
+            if (!i.Crafted)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+
+    bool CheckInput (Recipe Target)
     {
         List<Item> UnusedInput = new List<Item>();
         for (int i = 0; i < CurrentResearch; i++)
@@ -241,10 +263,10 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    void SuccessfulResearch(Recipe Discovery)
+    void SuccessfulResearch(Recipe Discovery, int No)
     {
         Pause = true;
-        Discovery.Output.Crafted = true;
+        Discovery.Output[No].Crafted = true;
         ChangeMoney(Discovery.MoneyReward);
         int NumberOfCuredChildren = Mathf.Min(IllChildren, Discovery.CureReward);
         IllChildren -= NumberOfCuredChildren;
@@ -253,14 +275,14 @@ public class GameManager : MonoBehaviour
         /// Discovery Window
         UIM.DiscoveryWindow.SetActive(true);
         DiscoveryRewardText.text = "Money: " + (Discovery.MoneyReward > 0 ? "+" : "") + Discovery.MoneyReward + " / Cured: " + (Discovery.CureReward > 0 ? "+" : "") + Discovery.CureReward;
-        DiscoveryDisplay.ThisItem = Discovery.Output;
+        DiscoveryDisplay.ThisItem = Discovery.Output[No];
         DiscoveryDisplay.UpdateDisplay();
 
         /// Item Panel
         GameObject NewItem = Instantiate(NewItemGO);
         NewItem.transform.SetParent(ContentGO);
         Display NewItemDisplay = NewItem.GetComponent<Display>();
-        NewItemDisplay.ThisItem = Discovery.Output;
+        NewItemDisplay.ThisItem = Discovery.Output[No];
         NewItemDisplay.UpdateDisplay();
     }
     
