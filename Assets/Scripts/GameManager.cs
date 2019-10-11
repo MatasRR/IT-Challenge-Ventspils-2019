@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     private float Countdown;
 
     public int TotalPopulation;
+    public int IllChildrenAtStart;
     private int HealthyChildren;
     private int IllChildren;
     private int DeadChildren;
@@ -106,7 +107,8 @@ public class GameManager : MonoBehaviour
         CurrentResearch = 2;
         Pause = false;
         Countdown = TimeLimit;
-        HealthyChildren = TotalPopulation;
+        HealthyChildren = TotalPopulation - IllChildrenAtStart;
+        IllChildren = IllChildrenAtStart;
     }
 
     private void Update()

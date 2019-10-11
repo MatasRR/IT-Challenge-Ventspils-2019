@@ -2119,7 +2119,7 @@ MonoBehaviour:
   Money: 1000
   TimeLimit: 180
   TotalPopulation: 1000
-  IllChildrenAtStart: 0
+  IllChildrenAtStart: 20
   DiseaseOutbreakFrequency: 1
   MinimumSurplusOfIllChildren: 1
   IllnessBaseOfExponent: 3
@@ -4738,7 +4738,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -5175,7 +5175,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -7071,7 +7071,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -9196,7 +9196,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -10627,7 +10627,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -11006,7 +11006,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
