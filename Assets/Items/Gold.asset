@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   Description: I am not a goblin, but I like it
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: 70f0390607072f546a845679c34c4631, type: 3}
   SFX: {fileID: 8300000, guid: 03492e61363f9a848ac651f3a5a2c15a, type: 3}
   Crafted: 0

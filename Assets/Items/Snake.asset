@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Snake
   m_EditorClassIdentifier: 
   Description: Psssss... A moving log??
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: 596dd760afee63a408a28b1a53257241, type: 3}
   SFX: {fileID: 0}
   Crafted: 0

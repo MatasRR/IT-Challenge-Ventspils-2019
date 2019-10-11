@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     private int IllChildren;
     private int DeadChildren;
 
+    public float LoseThreshold;
+
 
     [Header("Disease Outbreaks")]
 
@@ -398,5 +400,10 @@ public class GameManager : MonoBehaviour
         EndlessArrivedNewIllChildren *= StrengthOfPandemic;
         TotalPopulation += (int)EndlessArrivedNewIllChildren;
         IllChildren += (int)EndlessArrivedNewIllChildren;
+
+        if (SickPopulationPercent > LoseThreshold)
+        {
+            UIM.GameOver();
+        }
     }
 }

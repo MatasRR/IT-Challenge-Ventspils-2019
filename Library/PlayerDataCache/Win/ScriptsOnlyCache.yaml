@@ -27,6 +27,7 @@ ScriptsOnlyBuild:
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -88,6 +89,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10298}
     - Class: 114
       Script: {instanceID: 10340}
+    - Class: 114
+      Script: {instanceID: 10410}
     - Class: 114
       Script: {instanceID: 10440}
     - Class: 114
@@ -235,6 +238,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10340}
     - Class: 114
+      Script: {instanceID: 10410}
+    - Class: 114
       Script: {instanceID: 10440}
     - Class: 114
       Script: {instanceID: 10480}
@@ -320,6 +325,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10340}
     - Class: 114
+      Script: {instanceID: 10410}
+    - Class: 114
       Script: {instanceID: 10440}
     - Class: 114
       Script: {instanceID: 10480}
@@ -404,6 +411,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10298}
     - Class: 114
       Script: {instanceID: 10340}
+    - Class: 114
+      Script: {instanceID: 10410}
     - Class: 114
       Script: {instanceID: 10440}
     - Class: 114
@@ -839,7 +848,7 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: cd73543db9e9bd48a1d069325bb22d25
+      Hash: 990414e9ff7df451e14cd7a587d56752
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager

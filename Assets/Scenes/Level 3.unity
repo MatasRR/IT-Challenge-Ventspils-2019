@@ -2149,6 +2149,7 @@ MonoBehaviour:
   TimeLimit: 150
   TotalPopulation: 1000
   IllChildrenAtStart: 70
+  LoseThreshold: 0.6
   DiseaseOutbreakFrequency: 1
   MinimumSurplusOfIllChildren: 4
   IllnessBaseOfExponent: 3
@@ -4989,7 +4990,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -8794,7 +8795,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -10223,7 +10224,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
@@ -10602,7 +10603,7 @@ PrefabInstance:
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 298.50745
       objectReference: {fileID: 0}
     - target: {fileID: 2683686139993781574, guid: d510f19879e489949a2826082f5185fb,
         type: 3}

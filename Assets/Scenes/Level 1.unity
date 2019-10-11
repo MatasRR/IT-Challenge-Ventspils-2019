@@ -2149,6 +2149,7 @@ MonoBehaviour:
   TimeLimit: 180
   TotalPopulation: 1000
   IllChildrenAtStart: 20
+  LoseThreshold: 1
   DiseaseOutbreakFrequency: 1
   MinimumSurplusOfIllChildren: 1
   IllnessBaseOfExponent: 2

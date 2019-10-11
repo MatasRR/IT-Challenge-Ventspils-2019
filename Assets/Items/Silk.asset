@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Silk
   m_EditorClassIdentifier: 
   Description: Can it be embroidered? With leaves?
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: 7a4607aa26f50e640a0570a9a3d9f82b, type: 3}
   SFX: {fileID: 8300000, guid: b75cfce04f99a5c41b7f1fdc68674ece, type: 3}
   Crafted: 0

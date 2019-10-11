@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Glass
   m_EditorClassIdentifier: 
   Description: Pure and transparent - just like druid's heart
-  Icon: {fileID: 21300000, guid: e63397db2552fe74994dd1e9795e668d, type: 3}
+  Icon: {fileID: 21300000, guid: 9a6cfdbcc34f1834296e1ea43bb8163b, type: 3}
   SFX: {fileID: 8300000, guid: f7258d93c49419c47a1b75c6fbed2946, type: 3}
   Crafted: 0
