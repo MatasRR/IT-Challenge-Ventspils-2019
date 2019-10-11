@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private UIManager UIM;
 
     private Item[] InputItems;
-    private Recipe[] Recipies;
+    public Recipe[] Recipies;
 
     private Recipe ArtefactOfLifeRecipe;
 
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         UIM = gameObject.GetComponent<UIManager>();
         InputItems = new Item[UIM.InputSlots.Length];
 
-        Recipies = Resources.FindObjectsOfTypeAll<Recipe>();
+        //Recipies = Resources.FindObjectsOfTypeAll<Recipe>();
 
         foreach (Recipe r in Recipies)
         {
